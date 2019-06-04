@@ -34,7 +34,7 @@ In this case, my folder name is my_tutorial, which resulted in the file structur
 
 > [!TIP]
 > You can also use the --name argument like
-> dotnet new trydotnet-tutorial --name my_tutorial
+> `dotnet new trydotnet-tutorial --name my_tutorial`
 > This would create a new folder in your current working directory with the same structure as above.
 
 Now, let's see the template in action. In the my_tutorial folder, execute
