@@ -55,15 +55,17 @@ The files in a trydotnet-tutorial will typically be one of the three categories:
 ### Markdown files
 
 These are the files that will serve as your documentation. These are pretty much like the normal markdown files with some custom settings to enable them to be rendered interactively by the `dotnet try` engine.
-In the Readme.md file, notice that the code fences(the ``` notation used to denote code in markdown format) have some special arguments like `--source-file`, `--region`, etc and you actually dont see any code inside the fences, however when we are running the dotnet try process, we are able to see and execute code in place of this code fence. Let's get back to this later.
+In the Readme.md file, notice that the code fences(the ``` notation used to denote code in markdown format) have some special arguments like `--source-file`, `--region`, etc and you actually don't see any code inside the fences. However when we are running the dotnet try process, we are able to see and execute code in place of this code fence. Let's get back to this later.
 
 ### Project File
 
-The my_tutorial.csproj is a normal project file against which your source code will be compiled and run. Notice that for the template it has a reference to the [System.CommandLine.DragonFruit](a href="https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview">) package. This package provides a way to parse the command line arguments being passed to the main method. However, this is not compulsory and you might directly reference and execute the code using `--source-file` and `--region` arguments.
+The my_tutorial.csproj is a normal project file against which your source code will be compiled and run.
 
 ### Source Files
 
-These are the files that contain the code that will be executed. For simplicity, the template has only once source file, ie, Program.cs, however you can have more than one files and refer the code present in those files. Looking into the Program.cs, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library `System.CommandLine.DragonFruit` to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. You're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
+These are the files that contain the code that will be executed. For simplicity, the template has only once source file, ie, Program.cs, however you can have more than one files and refer the code present in those files. 
+
+Looking into the Program.cs, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library [System.CommandLine.DragonFruit](https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview) to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. You're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
 
 ## What's happening behind the scenes
 
