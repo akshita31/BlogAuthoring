@@ -14,7 +14,7 @@ Once succeeded it should print the available templates for dotnet new and the "t
 <img src ="dotnet_new.PNG" width="350">
 </p>
 
-Also, if you should install the `dotnet try` global tool, if you haven't already
+Also, you need to install the `dotnet try` global tool, if you haven't already
 ```console
 dotnet tool install -g dotnet-try
 ```
