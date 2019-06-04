@@ -1,6 +1,6 @@
-In our [previous post](https://devblogs.microsoft.com/dotnet/creating-interactive-net-documentation/), we announced the `dotnet try` global tool that enables developers to create workshops and write content that can give a more interactive and engaging experience for the users. This tool can greatly enhance the way the end users learn from your documentation by giving them hands on experince, wihout having to install any editor.
+In our [previous post](https://devblogs.microsoft.com/dotnet/creating-interactive-net-documentation/), we announced the `dotnet try` global tool that enables developers to create workshops and write content that can give a more interactive and engaging experience for the users. This tool can greatly enhance the way the end users learn from your documentation by giving them hands on experience, without having to install any editor.
 
-Today, we are announcing the avaialability of a new dotnet template called "trydotnet-tutorial". This template can be installed as part of the other "dotnet new" templates and can then be used to create a "getting started" basic code to help content authors understand the basics of the "dotnet try" tooling and then be able to write their own awesome documentation with it.
+Today, we are announcing the availability of a new dotnet template called "trydotnet-tutorial". This template can be installed as part of the other "dotnet new" templates and can then be used to create a "getting started" basic code to help content authors understand the basics of the "dotnet try" tooling and then be able to write their own awesome documentation with it.
 
 ## Setup
 To set this up, let's begin by installing the template. In a command prompt execute, 
@@ -26,7 +26,7 @@ Let's create a folder to contain your tutorial project and execute
 dotnet new trydotnet-tutorial
 ```
 
-In this case my folder name is my_tutorial, which resulted in the file structure below
+In this case, my folder name is my_tutorial, which resulted in the file structure below
 
 <p align ="center">
 <img src ="file_structure.PNG" width="350">
@@ -63,19 +63,19 @@ The my_tutorial.csproj is a normal project file against which your source code w
 
 ### Source Files
 
-These are the files that contain the code that will be executed. For simplicity the template has only once source file,ie,Program.cs, however you can have more than one files and refer the code present in those files. Looking into the Program.cs, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library `System.CommandLine.DragonFruit` to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. You're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
+These are the files that contain the code that will be executed. For simplicity, the template has only once source file, ie, Program.cs, however you can have more than one files and refer the code present in those files. Looking into the Program.cs, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library `System.CommandLine.DragonFruit` to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. You're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
 
 ## What's happening behind the scenes
 
-Code fences are a standard way to include code in your markdown files. The only change you need to do is to add few options in the first line of your code snippet. If you notice the above code snippet, there are three options in action.
+Code fences are a standard way to include code in your markdown files. The only change you need to do is to add a few options in the first line of your code snippet. If you notice the above code snippet, there are three options in action.
 
 | Option                                 | What it does                                                                                                                |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | `--project ./my_tutorial.csproj` | Points to the project that the sample is part of. (Optional. Defaults to any .csproj in the same folder as the `.md` file.) |
-| `--region HelloWorld`                        | Identifes a C# code `#region` to focus on. (Optional. If not specified, the whole file is displayed in the editor.)         |
+| `--region HelloWorld`                        | Identifies a C# code `#region` to focus on. (Optional. If not specified, the whole file is displayed in the editor.)         |
 | `--source-file ./Program.cs`  | Points to the file where the sample code is pulled from.  
 
-If you navigate back to Program.cs you will be able to see the various regions and the context in which your code is being execute.
+If you navigate back to Program.cs you will be able to see the various regions and the context in which your code is being executed.
 
 Now you can tweak and play around with the template and create awesome interactive tutorials. 
 
