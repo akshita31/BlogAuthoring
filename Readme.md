@@ -42,7 +42,7 @@ Now, let's see the template in action. In the my_tutorial folder, execute
 dotnet try
 ```
 
-This would start the dotnet try process and spin up a browser window with the interactive readme. You can click the "Run" button in the browser and see the Program running in action. You can also modify the code here and execute to see the changes.
+This would start the dotnet try process and spin up a browser window with the interactive readme. You can click the "Run" button in the browser and see the Program running in action. If you type in the editor you will also get diagnostics and intellisense. Try modifying the code here and execute to see the changes.
 
 <p align ="center">
 <img src ="dotnet_try_run.gif" width="350">
@@ -50,23 +50,32 @@ This would start the dotnet try process and spin up a browser window with the in
 
 ## Understanding the template
 
-The template has the following files:
+The files in a trydotnet-tutorial will typically be one of the three categories:
 
+### Markdown files
 
-1. Readme.md: The markdown file that will function as your documentation. This is prettIf you look carefully, the code fences(the ``` notation used to denote code in markdown format) has some additional arguments like `--source-file`, `--region`, etc and you actually dont see any code in the snippets. We will get back to this later.
-1. Program.cs: Your application code. The sample here uses the System.CommandLine DragonFruit package to parse the command line options and execute the code accordingly.
+These are the files that will serve as your documentation. These are pretty much like the normal markdown files with some custom settings to enable them to be rendered interactively by the `dotnet try` engine.
+In the Readme.md file, notice that the code fences(the ``` notation used to denote code in markdown format) have some special arguments like `--source-file`, `--region`, etc and you actually dont see any code inside the fences, however when we are running the dotnet try process, we are able to see and execute code in place of this code fence. Let's get back to this later.
 
-2. my_tdn_tutorial.csproj: The project file for your tutorial
+### Project File
 
-The Readme.md provides a further deep-dive into the code fence options that are being utilized. On a high level, the code fence options refer to the source file Program.cs and uses the --region option to execute a specific code path. 
+The my_tutorial.csproj is a normal project file against which your source code will be compiled and run. Notice that for the template it has a reference to the [System.CommandLine.DragonFruit](a href="https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview">) package. This package provides a way to parse the command line arguments being passed to the main method. However, this is not compulsory and you might directly reference and execute the code using `--source-file` and `--region` arguments.
 
-You may have noticed that the signature of `Program.Main` in the [QuickStart](./QuickStart.md)'s backing project (`Snippets.csproj`) looks a little strange:
+### Source Files
 
-```
-```cs --source-file ./Program.cs --project ./my_tdn_tutorial.csproj --region HelloWorld
-```
+These are the files that contain the code that will be executed. For simplicity the template has only once source file,ie,Program.cs, however you can have more than one files and refer the code present in those files. Looking into the Program.cs, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library `System.CommandLine.DragonFruit` to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. You're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
 
-Instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new [experimental library](https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview) `System.CommandLine.DragonFruit` to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to route to different methods, but you can probably think of other ways to use these arguments. As you saw from the tutorial, you're not required to use any particular library in your backing project. But the command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
+## What's happening behind the scenes
+
+Code fences are a standard way to include code in your markdown files. The only change you need to do is to add few options in the first line of your code snippet. If you notice the above code snippet, there are three options in action.
+
+| Option                                 | What it does                                                                                                                |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `--project ./my_tutorial.csproj` | Points to the project that the sample is part of. (Optional. Defaults to any .csproj in the same folder as the `.md` file.) |
+| `--region HelloWorld`                        | Identifes a C# code `#region` to focus on. (Optional. If not specified, the whole file is displayed in the editor.)         |
+| `--source-file ./Program.cs`  | Points to the file where the sample code is pulled from.  
+
+If you navigate back to Program.cs you will be able to see the various regions and the context in which your code is being execute.
 
 Now you can tweak and play around with the template and create awesome interactive tutorials. 
 
