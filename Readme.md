@@ -8,41 +8,42 @@ To set this up, let's begin by installing the template. In a command prompt exec
 dotnet new -i Microsoft.DotNet.Try.ProjectTemplate.Tutorial --nuget-source https://dotnet.myget.org/F/dotnet-try/api/v3/index.json
 ```
 
-Once succeeded it should print the available templates for dotnet new and the "trydotnet-tutorial" should be one them.
+Once it has been installed, it should print the available templates for dotnet new and the "trydotnet-tutorial" should be one them.
 
 <p align ="center">
 <img src ="dotnet_new.PNG" width="350">
 </p>
 
-Also, you need to install the `dotnet try` global tool, if you haven't already
+Also, you need to install the `dotnet try` global tool, if you haven't already.
 ```console
 dotnet tool install -g dotnet-try
 ```
 
 ## Using the template
 
-Let's create a folder to contain your tutorial project and execute
+Let's create a folder to contain your tutorial project. Inside that folder, execute the following command:
 ```console
 dotnet new trydotnet-tutorial
 ```
 
-In this case, my folder name is "my_tutorial", which resulted in the file structure below
+In this case, my folder name is "my_tutorial", which resulted in the following file structure
 
 <p align ="center">
 <img src ="file_structure.PNG" width="350">
 </p>
 
 > [!TIP]
-> You can also use the --name argument like
+> You can also use the `--name` option like this:
+
 > `dotnet new trydotnet-tutorial --name my_tutorial`
 > This would create a new folder in your current working directory with the same structure as above.
 
-Now, let's see the template in action. In the my_tutorial folder, execute
+Now, let's see the template in action. In the my_tutorial folder, execute the following command:
 ```console
 dotnet try
 ```
 
-This would start the dotnet try process and spin up a browser window with the interactive readme. You can click the "Run" button in the browser and see the Program running in action. If you type in the editor you will also get diagnostics and intellisense. Try modifying the code here and execute to see the changes.
+This will start the `dotnet try` tool and open a browser window with the interactive readme. You can click the "Run" button in the browser and see the output of the program. If you type in the editor you will also get diagnostics and intellisense. Try modifying the code here and execute to see the changes.
 
 <p align ="center">
 <img src ="dotnet_try_run.gif" width="350">
@@ -50,16 +51,16 @@ This would start the dotnet try process and spin up a browser window with the in
 
 ## Understanding the template
 
-The files in a trydotnet-tutorial will typically be one of the three categories:
+The files in a trydotnet-tutorial will typically be of one of the three categories:
 
 ### Markdown files
 
 These are the files that will serve as your documentation. These are pretty much like the normal markdown files with some custom settings to enable them to be rendered interactively by the `dotnet try` engine.
-In the Readme.md file, notice that the code fences(the ``` notation used to denote code in markdown format) have some special arguments like `--source-file`, `--region`, etc and you actually don't see any code inside the fences. However when we are running the dotnet try process, we are able to see and execute code in place of this code fence. Let's get back to this later.
+In the Readme.md file, notice that the code fences (the ``` notation used to denote code in markdown format) have some special arguments like `--source-file`, `--region`, etc and you actually don't see any code inside the fences. However when we are running the `dotnet try` tool, we are able to see and execute code in place of this code fence. Let's get back to this later.
 
 ### Project File
 
-The my_tutorial.csproj is a normal project file against which your source code will be compiled and run.
+The my_tutorial.csproj is a normal C# project file against which your source code will be compiled and run.
 
 ### Source Files
 
