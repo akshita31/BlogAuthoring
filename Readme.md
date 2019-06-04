@@ -26,7 +26,7 @@ Let's create a folder to contain your tutorial project and execute
 dotnet new trydotnet-tutorial
 ```
 
-In this case, my folder name is my_tutorial, which resulted in the file structure below
+In this case, my folder name is "my_tutorial", which resulted in the file structure below
 
 <p align ="center">
 <img src ="file_structure.PNG" width="350">
