@@ -1,6 +1,6 @@
-In our [previous post](https://devblogs.microsoft.com/dotnet/creating-interactive-net-documentation/), we announced the `dotnet try` global tool that enables developers to create workshops and write content that can give a more interactive and engaging experience for the users. This tool can greatly enhance the way the end users learn from your documentation by giving them hands on experience, without having to install any editor.
+In our [previous post](https://devblogs.microsoft.com/dotnet/creating-interactive-net-documentation/), we announced `dotnet try`, a global tool which enables developers to create workshops and write content which can give a more interactive and engaging experience for users. This tool can greatly enhance the way people learn from your documentation by giving them hands-on experience, without having to install an editor.
 
-Today, we are announcing the availability of a new dotnet template called "trydotnet-tutorial". This template can be installed as part of the other "dotnet new" templates and can then be used to create a "getting started" basic code to help content authors understand the basics of the "dotnet try" tooling and then be able to write their own awesome documentation with it.
+Today, we are announcing the availability of a new dotnet project template called "trydotnet-tutorial". This template can be installed as part of the other `dotnet new` templates and can then be used to create a "getting started" basic code to help content authors understand the basics of the `dotnet try` tooling and then be able to write their own awesome documentation with it.
 
 ## Setup
 To set this up, let's begin by installing the template. In a command prompt execute, 
