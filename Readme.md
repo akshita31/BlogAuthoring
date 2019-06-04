@@ -79,6 +79,6 @@ Code fences are a standard way to include code in your markdown files. The only 
 
 If you navigate back to Program.cs you will be able to see the various regions and the context in which your code is being executed.
 
-Now you can tweak and play around with the template and create awesome interactive tutorials. 
+You're all set! Now you can tweak and play around with the template and create awesome interactive tutorials. 
 
 You can learn more or reach out to us on [GitHub](https://github.com/dotnet/try).
