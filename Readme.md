@@ -65,11 +65,11 @@ In `Readme.md`, notice that the code fences (the ``` notation used to denote cod
 
 These are the files that contain the code that will be executed. For simplicity, the template has only once source file: `Program.cs`. However, since your project is a .NET Core project, any `.cs` files added to the directory will be a part of the compilation. You can also reference any of these files from a code fence in your markdown file. 
 
-Looking into `Program.cs`, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library [System.CommandLine.DragonFruit](https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview) to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to call different methods. You're not required to use any particular library in your backing project. The command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
+Looking at the contents of `Program.cs`, you will notice that instead of the familiar `Main(string[] args)` entry point, this program's entry point uses the new experimental library [System.CommandLine.DragonFruit](https://github.com/dotnet/command-line-api/wiki/DragonFruit-overview) to parse the arguments that were specified in your Markdown file's code fence. The `Readme.md` sample uses these arguments to call different methods. You're not required to use any particular library in your backing project. The command line arguments are available if you want to respond to them, and `DragonFruit` is a concise option for doing so.
 
 ## What's happening behind the scenes
 
-Code fences are a standard way to include code in your markdown files. The only change you need to do is to add a few options immediately following the ``` in the first line of your code fence. If you notice the below code fence (excerpted from `Readme.md`), there are three options in action.
+Code fences are a standard way to include code in your markdown files. The only change you need to make is to add a few options immediately following the ``` in the first line of your code fence. If you notice the below code fence (excerpted from `Readme.md`), there are three options in use.
 
 ````markdown
 ```cs --source-file ./Program.cs --project ./myTutorial.csproj --region HelloWorld
