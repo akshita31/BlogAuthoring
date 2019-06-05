@@ -11,7 +11,7 @@ dotnet new -i Microsoft.DotNet.Try.ProjectTemplate.Tutorial --nuget-source https
 
 If the installation succeeds, it will print the available templates for `dotnet new`, including `trydotnet-tutorial`.
 
-![dotnet new templates](dotnet_new.PNG)
+![dotnet new templates](https://user-images.githubusercontent.com/12554141/58923806-0bd38880-86f6-11e9-886e-a21f5435fdf6.PNG)
 
 Also, you need to install the `dotnet try` global tool, if you haven't already.
 ```console
@@ -27,7 +27,7 @@ dotnet new trydotnet-tutorial
 
 For example if the directory name is "myTutorial", it will result in the following layout:
 
-![Created layout](file_structure.PNG)
+![Created layout](https://user-images.githubusercontent.com/12554141/58923832-2a398400-86f6-11e9-824e-92f2635f1643.PNG)
 
 > [!TIP]
 > You can also use the `--name` option to automatically create a directory with the appropriate name.
@@ -41,7 +41,8 @@ dotnet try
 
 This will start the `dotnet try` tool and open a browser window with the interactive readme. You can click the "Run" button in the browser and see the output of the program. If you type in the editor you will also get live diagnostics and IntelliSense. Try modifying the code here and clicking run again to see the effect of your changes.
 
-![dotnet try in action](dotnet_try_run.gif)
+![dotnet try in action](https://user-images.githubusercontent.com/12554141/58923846-4a694300-86f6-11e9-8848-ef675b8a5a20.gif)
+
 
 ## Understanding the template
 
